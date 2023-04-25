@@ -32,7 +32,7 @@ jobs:
         unzip ./chromedriver_linux64.zip
     - name: python run
       run: |
-        python competition.py
+        python main.py
     - name: upload file
       run: |
         git config --local user.email "your@email"
