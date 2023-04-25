@@ -63,14 +63,21 @@ def parse(dt: str, dd: str, year: int) -> None:
 
 
 def removeWeakDay(text: str) -> str:
-    t1 = text.replace('(월)', '')
-    t2 = t1.replace('(화)', '')
-    t3 = t2.replace('(수)', '')
-    t4 = t3.replace('(목)', '')
-    t5 = t4.replace('(금)', '')
-    t6 = t5.replace('(토)', '')
-    t7 = t6.replace('(일)', '')
-    return t7
+    return text\
+        .replace('(월)', '')\
+        .replace('(화)', '')\
+        .replace('(수)', '')\
+        .replace('(목)', '')\
+        .replace('(금)', '')\
+        .replace('(토)', '')\
+        .replace('(일)', '')\
+        .replace('(Mon)', '')\
+        .replace('(Tue)', '')\
+        .replace('(Wed)', '')\
+        .replace('(Thu)', '')\
+        .replace('(Fri)', '')\
+        .replace('(Sat)', '')\
+        .replace('(Sun)', '')
 
 
 def getInfo(year) -> str:
