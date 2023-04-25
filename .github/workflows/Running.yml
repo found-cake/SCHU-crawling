@@ -37,6 +37,7 @@ jobs:
       run: |
         git config --local user.email "your@email"
         git config --local user.name "Auto Updater"
+        git add schedule.yml
         git commit -m "Auto - Update data with Scraping"
     - name: Push
       uses: ad-m/github-push-action@master
