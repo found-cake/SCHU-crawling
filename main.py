@@ -56,7 +56,7 @@ def parse(dt: str, dd: str, year: int) -> None:
         push(first, dd)
         return
     first = datetime.strptime(first, FORMAT)
-    late = datetime.strptime(late, FORMAT)
+    late = datetime.strptime(late, FORMAT) + ONE_DAY
     while first.day != late.day:
         push(first.strftime(FORMAT), dd)
         first += ONE_DAY
