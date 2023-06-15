@@ -1,7 +1,6 @@
 from datetime import datetime, timedelta
 
 import yaml
-import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
@@ -24,10 +23,7 @@ month_class_names = [
 ONE_DAY = timedelta(days=1)
 FORMAT = '%Y.%m.%d'
 
-options = webdriver.ChromeOptions()
-options.add_argument("lang=ko_KR")
-options.add_argument("disable-gpu")
-driver = webdriver.Chrome('chromedriver', chrome_options=options)
+driver = webdriver.Chrome('chromedriver')
 driver.implicitly_wait(3)
 
 data = {}
@@ -80,7 +76,6 @@ def removeWeakDay(text: str) -> str:
 def getInfo(year) -> str:
     URL = f'https://home.sch.ac.kr/sch/05/010000.jsp?board_no=20110224223754285127&defparam-year_month={year}-01'
     driver.get(URL)
-    time.sleep(3)
     info = driver.find_element(By.XPATH, '/html/body/div/div[1]/div[2]/div/div/div[2]')
     for i in range(12):
         monthInfo = info.find_element(By.CLASS_NAME, month_class_names[i])
