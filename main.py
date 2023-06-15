@@ -83,7 +83,7 @@ def removeWeakDay(text: str) -> str:
 def getInfo(year) -> str:
     URL = f'https://home.sch.ac.kr/sch/05/010000.jsp?board_no=20110224223754285127&defparam-year_month={year}-01'
     driver.get(URL)
-    info = driver.find_element(By.XPATH, '//*[@id="board_wrap"]/div/div/div[2]')
+    info = driver.find_element(By.XPATH, '/html/body/div/div[1]/div[2]/div/div/div[2]')
     for i in range(12):
         monthInfo = info.find_element(By.CLASS_NAME, month_class_names[i])
         infoList = monthInfo.find_element(By.CSS_SELECTOR, 'div.list > dl').text
