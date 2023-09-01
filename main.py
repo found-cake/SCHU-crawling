@@ -3,6 +3,7 @@ from datetime import datetime, timedelta
 import yaml
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
 
 # 요일 클래스 정보
 month_class_names = [
@@ -23,7 +24,7 @@ month_class_names = [
 ONE_DAY = timedelta(days=1)
 FORMAT = '%Y.%m.%d'
 
-driver = webdriver.Chrome('chromedriver')
+driver = webdriver.Chrome(ChromeDriverManager().install())
 driver.implicitly_wait(3)
 
 data = {}
